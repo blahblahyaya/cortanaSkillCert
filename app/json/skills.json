@@ -1,0 +1,239 @@
+[{
+		"skill_name": "Dorminos Pizza",
+		"invocation": "Ask Dorminos about my order",
+		"id": 22293,
+		"submitted": "/Date(1390272893353)/",
+		"description": "Order Dorminos Pizza and get order info directly from your Cortana device!",
+		"thumbnail_path": "/placeholder_img.png",
+		"audience": "General",
+		"status": [{
+			"id": 1,
+			"state": "In Review",
+			"status": "Waiting"
+		}],
+		"homepage": "",
+		"source": "https://microsoft.com/skill1",
+		"release_date": ""
+	},
+	{
+		"skill_name": "Akinator",
+		"invocation": "Ask Akinator about my aches and pains",
+		"id": 22294,
+		"submitted": "/Date(1390272893353)/",
+		"description": "Get info directly from your Cortana device!",
+		"thumbnail_path": "/placeholder_img.png",
+		"audience": "General",
+		"status": [{
+			"id": 1,
+			"state": "In Review",
+			"status": "Waiting"
+		}],
+		"homepage": "",
+		"source": "https://microsoft.com/skill1",
+		"release_date": ""
+	},
+	{
+		"skill_name": "Bartender",
+		"invocation": "Ask Bartender about my drink",
+		"id": 22295,
+		"submitted": "/Date(1390272893353)/",
+		"description": "Get info directly from your Cortana device!",
+		"thumbnail_path": "/placeholder_img.png",
+		"audience": "General",
+		"status": [{
+			"id": 1,
+			"state": "In Review",
+			"status": "Waiting"
+		}],
+		"homepage": "",
+		"source": "https://microsoft.com/skill1",
+		"release_date": ""
+	},
+	{
+		"skill_name": "MovieTickets",
+		"invocation": "Ask MovieTickets about my tickets",
+		"id": 22296,
+		"submitted": "/Date(1390272893353)/",
+		"description": "Get info directly from your Cortana device!",
+		"thumbnail_path": "/placeholder_img.png",
+		"audience": "General",
+		"status": [{
+			"id": 1,
+			"state": "In Review",
+			"status": "Waiting"
+		}],
+		"homepage": "",
+		"source": "https://microsoft.com/skill1",
+		"release_date": ""
+	},
+	{
+		"skill_name": "Skyscanner",
+		"invocation": "Ask Skyscanner about my weather",
+		"id": 22297,
+		"submitted": "/Date(1390272893353)/",
+		"description": "Get info directly from your Cortana device!",
+		"thumbnail_path": "/placeholder_img.png",
+		"audience": "General",
+		"status": [{
+			"id": 1,
+			"state": "In Review",
+			"status": "Waiting"
+		}],
+		"homepage": "",
+		"source": "https://microsoft.com/skill1",
+		"release_date": ""
+	},
+	{
+		"skill_name": "UPS",
+		"invocation": "Ask UPS about my package",
+		"id": 22298,
+		"submitted": "/Date(1390272893353)/",
+		"description": "Get info directly from your Cortana device!",
+		"thumbnail_path": "/placeholder_img.png",
+		"audience": "General",
+		"status": [{
+			"id": 1,
+			"state": "In Review",
+			"status": "Waiting"
+		}],
+		"homepage": "",
+		"source": "https://microsoft.com/skill1",
+		"release_date": ""
+	},
+	{
+		"skill_name": "Gigseekr",
+		"invocation": "Ask Gigseekr about my gadgets",
+		"id": 22299,
+		"submitted": "/Date(1390272893353)/",
+		"description": "Get info directly from your Cortana device!",
+		"thumbnail_path": "/placeholder_img.png",
+		"audience": "General",
+		"status": [{
+			"id": 1,
+			"state": "In Review",
+			"status": "Waiting"
+		}],
+		"homepage": "",
+		"source": "https://microsoft.com/skill1",
+		"release_date": ""
+	},
+	{
+		"skill_name": "Gupshup",
+		"invocation": "Ask Gupshup about my guppies",
+		"id": 22300,
+		"submitted": "/Date(1390272893353)/",
+		"description": "Get info directly from your Cortana device!",
+		"thumbnail_path": "/placeholder_img.png",
+		"audience": "General",
+		"status": [{
+			"id": 1,
+			"state": "In Review",
+			"status": "Waiting"
+		}],
+		"homepage": "",
+		"source": "https://microsoft.com/skill1",
+		"release_date": ""
+	},
+	{
+		"skill_name": "Porch",
+		"invocation": "Ask Porch about my neighborhood",
+		"id": 22301,
+		"submitted": "/Date(1390272893353)/",
+		"description": "Get info directly from your Cortana device!",
+		"thumbnail_path": "/placeholder_img.png",
+		"audience": "General",
+		"status": [{
+			"id": 1,
+			"state": "In Review",
+			"status": "Waiting"
+		}],
+		"homepage": "",
+		"source": "https://microsoft.com/skill1",
+		"release_date": ""
+	},
+	{
+		"skill_name": "Razonfish",
+		"invocation": "Ask Razonfish about my razor",
+		"id": 22302,
+		"submitted": "/Date(1390272893353)/",
+		"description": "Get info directly from your Cortana device!",
+		"thumbnail_path": "/placeholder_img.png",
+		"audience": "General",
+		"status": [{
+			"id": 1,
+			"state": "In Review",
+			"status": "Waiting"
+		}],
+		"homepage": "",
+		"source": "https://microsoft.com/skill1",
+		"release_date": ""
+	},
+	{
+		"skill_name": "Patron",
+		"invocation": "Ask Patron about my drink",
+		"id": 22303,
+		"submitted": "/Date(1390272893353)/",
+		"description": "Get info directly from your Cortana device!",
+		"thumbnail_path": "/placeholder_img.png",
+		"audience": "General",
+		"status": [{
+			"id": 1,
+			"state": "In Review",
+			"status": "Waiting"
+		}],
+		"homepage": "",
+		"source": "https://microsoft.com/skill1",
+		"release_date": ""
+	},
+	{
+		"skill_name": "Starfish Mint",
+		"invocation": "Ask Starfish Mint about my mint",
+		"id": 22304,
+		"submitted": "/Date(1390272893353)/",
+		"description": "Get info directly from your Cortana device!",
+		"thumbnail_path": "/placeholder_img.png",
+		"audience": "General",
+		"status": [{
+			"id": 1,
+			"state": "In Review",
+			"status": "Waiting"
+		}],
+		"homepage": "",
+		"source": "https://microsoft.com/skill1",
+		"release_date": ""
+	},
+	{
+		"skill_name": "Pylon",
+		"invocation": "Ask Pylon about my order",
+		"id": 22305,
+		"submitted": "/Date(1390272893353)/",
+		"description": "Get info directly from your Cortana device!",
+		"thumbnail_path": "/placeholder_img.png",
+		"audience": "General",
+		"status": [{
+			"id": 1,
+			"state": "In Review",
+			"status": "Waiting"
+		}],
+		"homepage": "",
+		"source": "https://microsoft.com/skill1",
+		"release_date": ""
+	},
+	{
+		"skill_name": "American Airlines",
+		"invocation": "Ask American about my flight",
+		"id": 22306,
+		"submitted": "/Date(1390272893353)/",
+		"description": "Get American Airlines flight information from your Cortana device!",
+		"thumbnail_path": "/placeholder_img.png",
+		"audience": "General",
+		"status": [{
+			"id": 1,
+			"state": "In Review",
+			"status": "Waiting"
+		}],
+		"homepage": "",
+		"source": "https://microsoft.com/skill2",
+		"release_date": ""
+	}
+]

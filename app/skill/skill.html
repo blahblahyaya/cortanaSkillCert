@@ -1,0 +1,202 @@
+<h1>{{skill.Name}}</h1>
+<h5 style="padding: 0px 0 3px;">by {{skill.ProviderName}}</h5>
+<div image-dimensions class="col-xs-24">
+	<p class="text-right">
+		<div class="btn-group" style="float: right;">
+	        <button class="btn btn-primary" ng-click="approveSkill()">Approve</button>
+	        <button class="btn btn-danger" ng-click="rejectSkill()" class="btn btn-default">Reject</button>
+
+	        <button ng-click="assignCertifier()" class="btn btn-default">Assign</button>
+	        <button ng-click="unAssignCertifier()" class="btn btn-default">Unassign</button>
+			<a class="btn btn-primary" href="mailto:{{skill.userEmail}}?bcc=v-anrob@microsoft.com&amp;subject=Certification%20Info%20for%20{{skill.Name | makeUppercase}}%20Skill-ID%3A%20{{skill.TaskGuid}}">Email Partner
+			</a>
+	        <a href="/#/"class="btn btn-link">Back to List</a>
+    	</div>
+	</p>
+	<figure>
+        <div class="media-img ratio-movie">
+            <a href="{{skill.LogoImg}}" target="new">
+                <img ng-src="{{skill.LogoImg}}" width="40" alt="" />
+            </a>
+        </div>
+        <figcaption class="media-caption">
+            <div class="media-subheader">
+                Display: {{ dimensions }}
+            </div>
+            <div class="media-subheader">
+                Actual: {{naturalDimensions}}
+            </div>
+        </figcaption>
+    </figure>
+</div>
+<div class="col-xs-12">
+	<p><strong>Description:</strong> {{skill.TaskDescription}}</p>
+	<p><strong>Long Description:</strong> {{skill.LongDescription}}</p>
+	 <p><strong>Validation Date: </strong>{{skill.ValidationInfo.LastModifiedDateTimeUtc}}</p>
+     <p><strong>Validation Date: </strong>{{1288323623006 | date:'medium'}}</p>
+
+	<p><strong>AppLinks:</strong>
+		<ul ng-repeat="linkSet in skill.AppLinks">
+			<li ng-repeat="(key, value) in linkSet">
+				<strong>{{key}}:</strong> {{value}}
+			</li>
+		</ul>
+	</p>
+	
+</div>
+<div class="col-xs-12">
+	<h4>Activity</h4>
+	<div class="table-responsive">
+        <table class="table table-striped theme-alt">
+        	<thead>
+	            <tr>
+	            	<th>Date</th>
+		            <th>User</th>
+		            <th>Status</th>
+		            <th>Notes</th>
+		            <th>Count</th>
+	            </tr>
+          </thead>
+          <tbody>
+              <tr ng-repeat="activity in activityLog">
+	              <td>{{activity.Date | date:'medium'}}</td>
+	              <td>{{activity.UserID}}</td>
+	              <td>{{activity.Status}}</td>
+	              <td>{{activity.Notes}}</td>
+	              <td>{{$index}}</td>
+              </tr>
+          	</tbody>
+        </table>
+    </div>
+</div>
+	<p><strong>Entities:</strong>
+		<ul>
+			<li ng-repeat="entity in skill.Entities">
+				{{entity.Name}} <br/>
+				<strong>Description:</strong> {{entity.Description}}<br/>
+				<strong>Id: </strong>{{entity.EntityId}}<br/>
+				<strong>Requires Conf?: </strong>{{entity.RequiresShareConfirmation}}<br/>
+				
+			</li>
+		</ul>
+	</p>
+	<p><strong>TaskParam Entity Map:</strong>
+		<ul>
+			<li ng-repeat="(key, value) in skill.TaskParamEntityMap">
+			<strong>{{key}}:</strong> {{value}}
+			</li>
+		</ul>
+	</p>
+	<div>
+		<strong>Market(s): </strong><span ng-repeat="market in skill.AvailableMarkets">{{market}}&nbsp;</span>
+	</div>
+</div>
+<div class="col-xs-24">
+	<h4>All fields</h4>
+	<div class="table-responsive">
+        <table class="table table-striped theme-alt">
+        	<thead>
+	            <tr>
+	            	<th>Key</th>
+		            <th>value</th>
+		            <th class="text-right">Index</th>
+	            </tr>
+          </thead>
+          <tbody>
+              <tr ng-repeat="(key, value) in skill">
+	              <td>{{key}}</td>
+	              <td>{{value}}</td>
+	              <td class="text-right">{{$index}}</td>
+              </tr>
+          	</tbody>
+        </table>
+    </div>
+</div>
+<div class="col-xs-24">
+	<p class="text-right">
+		<div class="btn-group" style="float: right;">
+	        <button class="btn btn-primary" ng-click="approveSkill()">Approve</button>
+	        <button class="btn btn-danger" ng-click="rejectSkill()" class="btn btn-default">Reject</button>
+
+	        <button ng-click="assignCertifier()" class="btn btn-default">Assign</button>
+	        <button ng-click="unAssignCertifier()" class="btn btn-default">Unassign</button>
+			<a class="btn btn-primary" href="mailto:{{skill.userEmail}}?bcc=v-anrob@microsoft.com&amp;subject=Certification%20Info%20for%20{{skill.Name | makeUppercase}}%20Skill-ID%3A%20{{skill.TaskGuid}}">Email Partner
+			</a>
+	        <a href="/#/"class="btn btn-link">Back to List</a>
+    	</div>
+	</p>
+</div>
+<div class="col-xs-24">
+	<div class="modal modal-center-vertical" id="modal-sample"
+	     tabindex="-1" role="dialog"
+	     aria-labelledby="modal-sample-label" aria-hidden="true">
+	    <div class="modal-dialog">
+	        <div class="modal-content">
+	            <div class="modal-header">
+	                <h4 class="modal-title" id="modal-sample-label">
+	                    Approve Skill
+	                </h4>
+	            </div>
+	            <div class="modal-body">
+	                Lorem ipsum dolor sit amet.
+	            </div>
+	            <div class="modal-footer">
+	                <button type="button" class="btn btn-primary">
+	                    Approve
+	                </button>
+	                <button type="button" class="btn btn-info"
+	                        data-dismiss="modal">
+	                    Cancel
+	                </button>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+</div>
+
+<div class="col-xs-24">
+	<div ng-controller="skillCtrl">
+	    <script type="text/ng-template" id="skillApproveModal.html">
+	            <div class="modal-header">
+	                <h4 class="modal-title" id="modal-sample-label">
+	                    Approve Skill
+	                </h4>
+	            </div>
+            	<form ng-submit="submit()">
+	           		<div class="modal-body">
+	            		<label>Public Notes for Skill Creator</label>
+	                	<textarea rows="5" cols="67" ng-model="user.notes"></textarea>
+	                	<label>Internal Notes</label>
+	                	<textarea rows="4" cols="67" ng-model="user.notes"></textarea>
+	            	</div>
+	            	<div class="modal-footer">
+	                	<input type="submit" class="btn btn-primary" value="Submit" />
+	                	<button class="btn btn-warning" ng-click="close()">Cancel</button>
+	            	</div>
+	        	</form>
+	    </script>
+	</div>
+	<div ng-controller="skillCtrl">
+	    <script type="text/ng-template" id="skillRejectModal.html">
+	            <div class="modal-header">
+	                <h4 class="modal-title" id="modal-sample-label">
+	                    Reject Skill
+	                </h4>
+	            </div>
+	            <form ng-submit="submit()">
+		            <div class="modal-body">
+		            	<label>Public Notes for Skill Creator</label>
+		                <textarea rows="5" cols="67" ng-model="user.notes"></textarea>
+		                <label>Internal Notes</label>
+		                <textarea rows="4" cols="67" ng-model="user.notes"></textarea>
+		            </div>
+		            <div class="">
+		                <input type="submit" class="btn btn-primary" value="Submit" />
+		                <button class="btn btn-warning" ng-click="close()">Cancel</button>
+		                <a class="btn" style="float: right;" href="mailto:{{skill.userEmail}}?bcc=v-anrob@microsoft.com&amp;subject=Skill%20Did%20Not%20Pass%20for%20{{skill.Name | makeUppercase}}%20Skill-ID%3A%20{{skill.TaskGuid}}">Email Creator
+			</a>
+		            </div>
+		        </form>
+	    </script>
+	</div>
+</div>

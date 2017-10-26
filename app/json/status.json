@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "state":"In Review",
+    "status": "Waiting"
+  },
+  {
+    "id": 2,
+    "state":"In Review",
+    "status": "Assigned"
+  },
+  {
+    "id": 3,
+    "state":"In Review",
+    "status": "Approved"
+  },
+  {
+    "id": 4,
+    "state":"In Review",
+    "status": "Rejected"
+  },
+  {
+    "id": 5,
+    "state":"In Review",
+    "status": "Withdrawn"
+  },
+  {
+    "id": 6,
+    "state":"In Review",
+    "status": "Deleted"
+  },
+  {
+    "id": 7,
+    "state":"In Production",
+    "status": "Active"
+  },
+  {
+    "id": 8,
+    "state":"In Production",
+    "status": "Withdrawn"
+  },
+  {
+    "id": 9,
+    "state":"In Production",
+    "status": "Deleted"
+  },
+  {
+    "id": 10,
+    "state":"Deployed for Tenent",
+    "status": "Active"
+  },
+  {
+    "id": 11,
+    "state":"Deployed for Tenent",
+    "status": "Withdrawn"
+  },
+  {
+    "id": 12,
+    "state":"Deployed for Tenent",
+    "status": "Deleted"
+  }
+]

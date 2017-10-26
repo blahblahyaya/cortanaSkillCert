@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="cortanaCert"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Cortana Skill Certification</title>
+  <link rel="stylesheet" type="text/css" href="app.css">
+  <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="css/winstrap.min.css?0.5.11" />
+</head>
+<body>
+   <div class="navbar navbar-fixed-top navbar-inverse">
+    <div class="container">
+      <div class="">
+        <a href="#/" class="navbar-brand">
+          Cortana Skill Certification
+        </a>
+      </div>
+      <div class="" style="float:right;">
+      <a href="http://www.microsoft.com" class="navbar-brand">
+          <img src="https://assets.onestore.ms/cdnfiles/onestorerolling-1511-11008/shell/v3/images/logo/microsoft.png" alt="Microsoft" height="23">
+      </a>
+    </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+
+      <ng-view></ng-view>
+
+    </div>
+  </div>
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+  <script src="components/paginate/paginate-filter.js"></script>
+  <script src="components/dates/date-filter.js"></script>
+  <script src="components/encode/encode-filter.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="bower_components/angular-ui/build/angular-ui.js"></script>
+  <script src="bower_components/angular-image-dimensions/dist/angular-image-dimensions.js"></script>
+  <script src="certqueue/certqueue.js"></script>
+  <script src="skill/skill.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

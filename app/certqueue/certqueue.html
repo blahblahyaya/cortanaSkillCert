@@ -1,0 +1,69 @@
+<div class="page-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-24">
+                <h1>Skills List</h1>
+                <ul class="nav nav-pills">
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-xs-24">
+  <ul uib-pagination class="pagination" total-items="skillList.length" ng-model="currentPage" items-per-page="pageSize"></ul>
+</div>
+<div class="col-xs-24">
+  <div class="row">
+      <div class="col-md-1">  <!-- if you want more than one column at a narrow viewport-->
+          <strong></strong>    <!-- adjust the grid settings appropriately-->
+      </div>
+      <div class="col-md-4">
+          Skill Name
+      </div>
+      <div class="col-md-7">
+          Short Description
+      </div>
+      <div class="col-md-2">
+          Market
+      </div>
+      <div class="col-md-4">
+          Submitted
+      </div>
+      <div class="col-md-4">
+          Actions
+      </div>
+  </div>
+</div>
+<div class="section" id="test-section">
+  <div class="col-xs-24">
+      <ol class="list-items">
+        <li class="list-items-row"  ng-repeat="skill in skillList | paginate:currentPage:pageSize">
+            <div class="row">
+                <div class="col-md-1">
+                    <a href="#/skill/{{skill.Id}}"><img ng-src="{{skill.LogoImg}}" width="40"></a>  
+                </div>
+                <div class="col-md-4">
+                    <a href="#/skill/{{skill.Id}}">{{skill.Name}} by {{skill.ProviderName}}</a>
+                </div>
+                <div class="col-md-7">
+                    {{skill.TaskDescription}}
+                </div>
+                <div class="col-md-2">
+                    <span ng-repeat="market in skill.AvailableMarkets">
+                      {{market}}&nbsp;
+                    </span> 
+                </div>
+                <div class="col-md-4">
+                  <span ng-show="skill.ValidationInfo.LastModifiedDateTimeUtc > 0">{{skill.ValidationInfo.LastModifiedDateTimeUtc}}</span>
+                </div>
+                <div class="col-md-4">
+                    <a href="#/skill/{{skill.Id}}">Details</a>
+                </div>
+            </div>
+        </li>
+      </ol>
+    </div>
+</div>
+<div class="col-xs-24">
+  <ul uib-pagination class="pagination" total-items="skillList.length" ng-model="currentPage" items-per-page="pageSize"></ul>
+</div>

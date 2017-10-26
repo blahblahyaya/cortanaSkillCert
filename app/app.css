@@ -1,0 +1,19 @@
+body {
+	margin-top: 50px !important; 
+}
+
+.skill-container {
+	height: 70px;
+}
+
+.skill-thumb {
+
+}
+
+.thumbnail {
+	margin-bottom: 0px !imp;
+	max-height: 70px;
+}
+
+tr.skill-list:hover { background: #ddd; }
+td a { display: block; padding: 5px 20px; }
