@@ -2,12 +2,37 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-24">
-                <h1>Skills List</h1>
+                <h1 ng-show="stage">Skills List - {{stage | stageName}} ({{skillList.length | number}})</h1>
+                <h1 ng-hide="stage">Skills List - All ({{skillList.length | number}})</h1>
                 <ul class="nav nav-pills">
                 </ul>
             </div>
         </div>
     </div>
+</div>
+<div class="col-xs-24">
+  <div class="row">
+    <form class="navbar-form navbar-right" role="search">
+      <div class="form-group">
+          <input type="search" class="form-control" placeholder="Search" id="query" ng-model="query">
+      </div>
+      <button type="submit" class="btn btn-default"></button>
+    </form>
+    <strong>Filter and sort: </strong>
+    <select ng-model="orderList">
+      <option value="Name">By name</option>
+      <option value="-Name">By name desc</option>
+      <option value="ProductGuid">By GUID</option>
+      <option value="-ValidationInfo.LastModifiedDateTimeUtc">Newest</option>
+      <option value="ValidationInfo.LastModifiedDateTimeUtc">Oldest</option>
+    </select>
+    <a href="/#/"class="btn btn-link">All Skills</a>
+    <a href="/#/?stage=1&orderList=ValidationInfo.LastModifiedDateTimeUtc"class="btn btn-link">In Certification</a>
+    <a href="/#/?stage=3"class="btn btn-link">Production Flight</a>
+    
+    <a href="/#/?stage=4&orderList=-ValidationInfo.LastModifiedDateTimeUtc"class="btn btn-link">In 
+    Production</a>
+  </div>
 </div>
 <div class="col-xs-24">
   <ul uib-pagination class="pagination" total-items="skillList.length" ng-model="currentPage" items-per-page="pageSize"></ul>
@@ -17,47 +42,65 @@
       <div class="col-md-1">  <!-- if you want more than one column at a narrow viewport-->
           <strong></strong>    <!-- adjust the grid settings appropriately-->
       </div>
-      <div class="col-md-4">
+      <div class="col-md-3">
           Skill Name
       </div>
-      <div class="col-md-7">
+      <div class="col-md-5">
           Short Description
       </div>
       <div class="col-md-2">
           Market
       </div>
-      <div class="col-md-4">
-          Submitted
+      <div class="col-md-3">
+          Stage
       </div>
       <div class="col-md-4">
+          GUID
+      </div>
+      <div class="col-md-4">
+          Val Update
+      </div>
+      <div class="col-md-1">
           Actions
+      </div>
+      <div class="col-md-1">
+          #
       </div>
   </div>
 </div>
 <div class="section" id="test-section">
   <div class="col-xs-24">
       <ol class="list-items">
-        <li class="list-items-row"  ng-repeat="skill in skillList | paginate:currentPage:pageSize">
+        <li class="list-items-row"  ng-repeat="skill in skillList | orderBy: orderList | filter:query | paginate:currentPage:pageSize">
             <div class="row">
                 <div class="col-md-1">
-                    <a href="#/skill/{{skill.Id}}"><img ng-src="{{skill.LogoImg}}" width="40"></a>  
+                    <a href="#/skill/{{skill.id}}"><img ng-src="{{skill.LogoImg}}" width="40"></a>  
                 </div>
-                <div class="col-md-4">
-                    <a href="#/skill/{{skill.Id}}">{{skill.Name}} by {{skill.ProviderName}}</a>
+                <div class="col-md-3">
+                    <a href="#/skill/{{skill.id}}">{{skill.Name}} by {{skill.ProviderName}}</a>
                 </div>
-                <div class="col-md-7">
-                    {{skill.TaskDescription}}
+                <div class="col-md-5">
+                    {{skill.TaskDescription | limitTo: 60}}
                 </div>
                 <div class="col-md-2">
                     <span ng-repeat="market in skill.AvailableMarkets">
                       {{market}}&nbsp;
                     </span> 
                 </div>
-                <div class="col-md-4">
-                  <span ng-show="skill.ValidationInfo.LastModifiedDateTimeUtc > 0">{{skill.ValidationInfo.LastModifiedDateTimeUtc}}</span>
+                <div class="col-md-3">
+                    {{skill.Stage | stageName}}
                 </div>
                 <div class="col-md-4">
-                    <a href="#/skill/{{skill.Id}}">Details</a>
+                    <a href="/#/?productGuid={{skill.ProductGuid}}" >{{skill.ProductGuid}}</a>
+                </div>
+                <div class="col-md-4">
+                  <span ng-show="skill.ValidationInfo.LastModifiedDateTimeUtc > 0">{{skill.ValidationInfo.LastModifiedDateTimeUtc | dtTicks | date:'medium'}}</span>
+                </div>
+                <div class="col-md-1">
+                    <a href="#/skill/{{skill.id}}">Details</a>
+                </div>
+                <div class="col-md-1 text-right">
+                  {{$index +1}}
                 </div>
             </div>
         </li>

@@ -1,5 +1,6 @@
 <h1>{{skill.Name}}</h1>
 <h5 style="padding: 0px 0 3px;">by {{skill.ProviderName}}</h5>
+<h5 style="padding: 0px 0 3px;">Stage: {{skill.Stage | stageName}}</h5>
 <div image-dimensions class="col-xs-24">
 	<p class="text-right">
 		<div class="btn-group" style="float: right;">
@@ -32,8 +33,8 @@
 <div class="col-xs-12">
 	<p><strong>Description:</strong> {{skill.TaskDescription}}</p>
 	<p><strong>Long Description:</strong> {{skill.LongDescription}}</p>
-	 <p><strong>Validation Date: </strong>{{skill.ValidationInfo.LastModifiedDateTimeUtc}}</p>
-     <p><strong>Validation Date: </strong>{{1288323623006 | date:'medium'}}</p>
+	
+	 <p><strong>Validation Date: </strong><span ng-show="skill.ValidationInfo.LastModifiedDateTimeUtc > 0">{{skill.ValidationInfo.LastModifiedDateTimeUtc | dtTicks | date:'medium'}}</span></p>
 
 	<p><strong>AppLinks:</strong>
 		<ul ng-repeat="linkSet in skill.AppLinks">
@@ -165,9 +166,9 @@
             	<form ng-submit="submit()">
 	           		<div class="modal-body">
 	            		<label>Public Notes for Skill Creator</label>
-	                	<textarea rows="5" cols="67" ng-model="user.notes"></textarea>
+	                	<textarea rows="5" style="width:100%;" ng-model="user.notes"></textarea>
 	                	<label>Internal Notes</label>
-	                	<textarea rows="4" cols="67" ng-model="user.notes"></textarea>
+	                	<textarea rows="4" style="width:100%;"ng-model="user.notes"></textarea>
 	            	</div>
 	            	<div class="modal-footer">
 	                	<input type="submit" class="btn btn-primary" value="Submit" />
@@ -186,9 +187,9 @@
 	            <form ng-submit="submit()">
 		            <div class="modal-body">
 		            	<label>Public Notes for Skill Creator</label>
-		                <textarea rows="5" cols="67" ng-model="user.notes"></textarea>
+		                <textarea rows="5" style="width:100%;" ng-model="user.notes"></textarea>
 		                <label>Internal Notes</label>
-		                <textarea rows="4" cols="67" ng-model="user.notes"></textarea>
+		                <textarea rows="4" style="width:100%;" ng-model="user.notes"></textarea>
 		            </div>
 		            <div class="">
 		                <input type="submit" class="btn btn-primary" value="Submit" />

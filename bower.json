@@ -14,6 +14,8 @@
     "bootstrap":"",
     "angular-bootstrap": "",
     "angular-image-dimensions": "",
-    "angular-ui": ""
+    "angular-ui": "",
+    "underscore":"",
+    "restangular": ""
   }
 }
