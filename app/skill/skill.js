@@ -22,58 +22,13 @@ angular.module('cortanaCert.skill', ['ui.bootstrap', 'ngImageDimensions'])
 		//$http.get('json/AllTasks171025.json').then(skillSuccessCallback, errorCallback);
 		//$scope.skill2 = Restangular.one('skills', $scope.skillID).get();
 
-$scope.stageList = [
-        {
-            "id": 0,
-            "stage": "Development"
-        },
-        {
-            "id": 1,
-            "stage": "Certification"
-        },
-        {
-            "id": 2,
-            "stage": "EnabledForSelf"
-        },
-        {
-            "id": 3,
-            "stage": "ProductionFlight"
-        },
-        {
-            "id": 4,
-            "stage": "Production"
-        },
-        {
-            "id": 5,
-            "stage": "Approved"
-        },
-        {
-            "id": 6,
-            "stage": "EnabledForGroup"
-        },
-        {
-            "id": 7,
-            "stage": "EnabledForTenant"
-        }
-    ];
+		// get activity for this skill
+		$http.get('http://localhost:3000/activity/?SkillId=' + parseInt($scope.skillID)).then(activitySuccessCallback, errorCallback);
+		function activitySuccessCallback(response){
+			$scope.activityLog = response.data;
+		}
 
 
-		$scope.activityLog = [
-			{
-		    "Id": 1035648,
-		    "UserID": 123,
-		    "Status":"In Review",
-		    "Date": "2017-09-23T18:25:43.511Z",
-		    "Notes": "The note goes here."
-		  	},
-		  	{
-		    "Id": 1035648,
-		    "UserID": 123,
-		    "Status":"Assigned",
-		    "Date": "2017-09-23T17:25:43.511Z",
-		    "Notes": "The other note is here."
-		  	}
-		];
 /*
 		// pull in the logs for this skill based on Id: 
 		$http.get('json/ActivityLog.json').then(activitySuccessCallback, errorCallback);
@@ -85,7 +40,35 @@ $scope.stageList = [
 
 	    $scope.approveSkill = function () {
 	    	var $actDate = new Date();
-	    	$scope.activityLog.push({Id: $scope.skill.Id, UserID: 123, Date: $actDate, Notes: "Open Approve", Status:"Approve Started"});
+	    	//$scope.activityLog.push({Id: $scope.skill.Id, UserID: 123, Date: $actDate, Notes: "Open Approve", Status:"Approve Started"});
+
+	    	// add activity
+	    	$http({
+			    method : "POST",
+			    url : 'http://localhost:3000/activity/',
+			    data : angular.toJson({
+			    	SkillId: $scope.skillID, 
+			    	UserID: 234, 
+			    	Date: $actDate, 
+			    	Status: "Approve Skill", 
+			    	Notes:"Skill activity logged."
+			    }),
+			    headers : {
+			        'Content-Type' : 'application/json'
+				}
+			}).then( _success, _error );
+     
+            function _success(response) {
+				console.log("Activity Add success for " + $scope.skillID);
+				// refresh activity list
+				$http.get('http://localhost:3000/activity/?SkillId=' + parseInt($scope.skillID)).then(activitySuccessCallback, errorCallback);
+            };
+     
+            function _error(response) {
+                console.log(response.statusText);
+            };
+     
+
 	        $uibModal.open({
 	            templateUrl: 'skillApproveModal.html', // loads the template
 	            backdrop: true, // setting backdrop allows us to close the modal window on clicking outside the modal window
